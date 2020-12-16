@@ -1,0 +1,34 @@
+.font-18{
+  font-size: 1.125rem;
+}
+
+.font-24{
+  font-size: 1.5rem;
+}
+
+.bgTomato {
+    background-color: tomato;
+}
+
+.bgAqua {
+    background-color: aqua;
+}
+
+.bgRed {
+    background-color: red;
+}
+
+.bgGrey {
+    background-color: grey;
+}
+
+.flex-dead-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    /*background: transparent;make scrollbar transparent */
+}
