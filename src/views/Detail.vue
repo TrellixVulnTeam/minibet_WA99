@@ -5,7 +5,7 @@
     //min-width: 23.5rem;
     display: flex;
     flex-direction: column;
-    margin: 0rem 1.5rem 0rem 1.5rem;
+    margin: 0rem 1.5rem;
     background-color: #fff;
     border-radius: 0.75rem 0.75rem 0.75rem 0;
     .main_info {
