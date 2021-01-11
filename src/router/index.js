@@ -9,7 +9,7 @@ const routes = [
     component: Home
   },
   {
-    path: '/detail/:txnValue',
+    path: '/detail/:prop_txnId',
     name: 'Detail',
     component: Detail,
     props: true

@@ -11,7 +11,7 @@
     align-items: stretch;
     justify-content: left;
     overflow: scroll;
-    padding: 0rem 1.5rem 0rem 1.5rem;
+    padding: 0rem 1.5rem;
 }
 
 @media only screen and (min-width: 800px) {

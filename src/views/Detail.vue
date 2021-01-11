@@ -114,7 +114,7 @@
             width: 100%;
             height: 0.75rem;
             border-radius: 0.75rem 0.75rem 0.75rem 0;
-            padding: 0 0.25rem 0 0.25rem;
+            padding: 0 0.25rem;
             display: flex;
             align-items: center;
             & div:nth-child(1) {
@@ -202,7 +202,7 @@
 </style>
 
 <template>
-<DetailHeader :prop_transactionType="txnType" />
+<DetailHeader :prop_transactionType="prop_txnType" />
 <div class="main_card-wrap">
     <div class="top_info">
         <div class="main_info">
@@ -213,19 +213,19 @@
                 <div>
                     {{getTxnPrefix()}}{{randomizeRange(10000000,99000000)}}
                 </div>
-                <div>{{ `${getSign()} ${txnCurrency} ${(txnValue)}` }}</div>
+                <div>{{ `${getSign()} ${prop_txnCurrency} ${(prop_txnValue)}` }}</div>
             </div>
         </div>
         <div class="subinfo">
             <div class="status">
                 <div>Current Status</div>
-                <div :class="{'txtTomato': txnStatus=='failed','txtOrange': txnStatus=='pending'}">{{ txnStatus }}</div>
+                <div :class="{'txtTomato': prop_txnStatus=='failed','txtOrange': prop_txnStatus=='pending'}">{{ prop_txnStatus }}</div>
             </div>
             <div class="lastupdate">
                 <div>Last Updated</div>
-                <div>{{`${txnDateStamp} mins ago` }}</div>
+                <div>{{`${prop_txnDateStamp} mins ago` }}</div>
             </div>
-            <div v-if="checkUrge(txnStatus)" class="urge-wrap">
+            <div v-if="checkUrge(prop_txnStatus)" class="urge-wrap">
                 <div class="urge-contents">
                     <div class="urge-label">Urge!</div>
                     <div></div>
@@ -235,10 +235,10 @@
         </div>
     </div>
     <div class="bottom_info">
-        <div v-if="checkUrge(txnStatus)" class="bar">
+        <div v-if="checkUrge(prop_txnStatus)" class="bar">
             <div>
                 <!--outer bar-->
-                <div :style="{ width: `${txnDateStamp}%`}"></div>
+                <div :style="{ width: `${prop_txnDateStamp}%`}"></div>
                 <!--inner bar-->
             </div>
         </div>
@@ -262,16 +262,15 @@
 // @ is an alias to /src
 //import HelloWorld from '@/components/HelloWorld.vue'
 import {
-    useRoute
+    useRoute // this is declared so that you can use this.route.params.txnSomething... that comes from router.push
 }
 from 'vue-router';
 import DetailHeader from './../components/common/DetailHeader.vue'
-
 export default {
     name: 'Detail',
     data() {
         return {
-            route: useRoute(),
+            route: useRoute(), //params can be passed on this object
             convDetails: [],
             convActions: ["Upload (Manual)", "Make Deposit", "Wait for confirmation", "Receipt Accepted", "Receipt Submitted"],
             convRemarks: ["If set to 0, the extra space around content isn’t factored in. If set to auto, the extra space is distributed based on its flex-grow value. See this graphic.", "It is recommended that you use this shorthand property rather than set the individual properties. The shorthand sets the other values intelligently.", "This defines the default size of an element before the remaining space is distributed.", "It can be a length (e.g. 20%, 5rem, etc.) or a keyword. The auto keyword means “look at my width or height property” (which was temporarily done by the main-size keyword until deprecated).", "", "", ""],
@@ -279,19 +278,14 @@ export default {
         }
     },
     props: {
-        txnCurrency: String,
-        txnValue: String,
-        txnDateStamp: String,
-        txnStatus: String,
-        txnType: String
+        prop_txnCurrency: String,
+        prop_txnValue: String,
+        prop_txnDateStamp: String,
+        prop_txnStatus: String,
+        prop_txnType: String,
+        prop_txnId: String
     },
     computed: {
-        /*transactionId : function(){
-          return this.route.params.transactionId
-        },
-        mydata : function(){
-          return this.route.params.mydata
-        }*/
 
     },
     components: {
@@ -302,17 +296,17 @@ export default {
                 return Intl.NumberFormat().format(parseInt(number))
             },
             getSign() {
-                return this.txnType == 'deposit' ? '+' : this.txnType == 'withdrawal' ? '-' : '>'
+                return this.prop_txnType == 'deposit' ? '+' : this.prop_txnType == 'withdrawal' ? '-' : '>'
             },
             getTxnIcon() {
                 return {
-                    'icon_deposit': this.txnType == 'deposit',
-                    'icon_withdrawal': this.txnType == 'withdrawal',
-                    'icon_transfer': this.txnType == 'transfer'
+                    'icon_deposit': this.prop_txnType == 'deposit',
+                    'icon_withdrawal': this.prop_txnType == 'withdrawal',
+                    'icon_transfer': this.prop_txnType == 'transfer'
                 }
             },
             getTxnPrefix() {
-                return this.txnType == 'deposit' ? 'DP' : this.txnType == 'withdrawal' ? 'WD' : 'TN'
+                return this.prop_txnType == 'deposit' ? 'DP' : this.prop_txnType == 'withdrawal' ? 'WD' : 'TN'
             },
             checkUrge(status) {
                 return (status == 'pending' || status == 'processing')
@@ -336,8 +330,8 @@ export default {
             }
     },
     mounted() {
-
-        //console.log(this.transactionData)
+      //console.log(this.route.params.fullTxnDetails) // pass object as parameter, fail
+      //console.log(this.fullTxnDetails) // pass object as props, fail
     },
     created() {
         var i = 0
@@ -351,7 +345,7 @@ export default {
         for (i = 0; i < limit; i++) {
             this.addMoreDetails(i)
         }
-        console.clear()
+        //console.clear()
             //console.table(this.convDetails)
             //this.transactionData = this.route.params.data
     }

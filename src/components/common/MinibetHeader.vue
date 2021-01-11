@@ -8,7 +8,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0rem 1.5rem 0rem 1.5rem;
+    padding: 0rem 1.5rem;
 }
 
 .logo-wrap {

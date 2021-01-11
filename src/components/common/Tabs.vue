@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0rem 1.5rem 0rem 1.5rem;
+    padding: 0rem 1.5rem;
     white-space: nowrap;
     overflow: auto;
 }
@@ -19,7 +19,7 @@
     min-width: 3rem;
     min-height: 3rem;
     text-align: center;
-    padding: 0rem 2rem 0rem 2rem;
+    padding: 0rem 2rem;
     border-radius: 1.5rem 1.5rem 1.5rem 0;
     font-weight: bold;
     color: #111;
@@ -40,7 +40,7 @@
     min-width: 3rem;
     min-height: 3rem;
     text-align: center;
-    padding: 0rem 2rem 0rem 2rem;
+    padding: 0rem 2rem;
     border-radius: 1.5rem 1.5rem 1.5rem 0;
     font-weight: bold;
     color: #AAA;

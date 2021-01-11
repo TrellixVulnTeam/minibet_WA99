@@ -125,7 +125,7 @@ export default {
         var subject = this.prop_transactionItems
         //console.log("i'm passing an " + this.prop_transactionItems.constructor.name),
         //console.table(this.prop_transactionItems),
-        this.$router.push({ name: 'Detail', params: { txnValue: Intl.NumberFormat().format(subject.value), txnCurrency: subject.currency, txnDateStamp: subject.dateStamp, txnStatus: subject.status, txnType: subject.type }, props: true})
+        this.$router.push({ name: 'Detail', params: { prop_txnValue: subject.value, prop_txnCurrency: subject.currency, prop_txnDateStamp: subject.dateStamp, prop_txnStatus: subject.status, prop_txnType: subject.type, prop_txnId: subject.id }})
         //alert("clicked");
         //window.location.href = 'Detail.vue';
       },

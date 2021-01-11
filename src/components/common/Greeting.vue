@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: row;
     align-items: left;
-    padding: 0rem 1.5rem 0rem 1.5rem;
+    padding: 0rem 1.5rem;
 }
 
 .greeting-wrap div.content {

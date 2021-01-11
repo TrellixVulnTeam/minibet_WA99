@@ -8,16 +8,17 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0rem 1.5rem 0rem 1.5rem;
+    padding: 0rem 1.5rem;
 }
 
-.label-wrap {
+.label-wrap, a, a:visited {
     display: flex;
     justify-content: left;
     padding-left: 1rem;
     font-size: 1.125rem;
     color: #eee;
     text-transform: capitalize;
+    text-decoration: none;
 }
 
 .ico_back {
@@ -46,7 +47,7 @@
   <div class="header-wrap">
       <div class="ico_back" @click="backToHome"></div>
       <div class="label-wrap" style="flex-grow: 2">
-          {{ transactionType }} Transaction
+          <router-link :to="'/Home'">{{ transactionType }} Transaction</router-link>
       </div>
       <div class="ico_more"></div>
   </div>
