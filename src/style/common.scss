@@ -1,0 +1,57 @@
+#app {
+  font-family: Source Sans Pro;
+}
+
+body {
+  background-color: #333;
+  margin: 0 auto;
+  min-width: 20rem;
+  max-width: 50rem;
+}
+
+.font-18{
+  font-size: 1.125rem;
+}
+
+.font-24{
+  font-size: 1.5rem;
+}
+
+.bgTomato {
+    background-color: tomato;
+}
+
+.txtTomato {
+    color: tomato !important;
+}
+
+.bgOrange {
+    background-color: #ff8800;
+}
+
+.txtOrange {
+    color: #ff8800 !important;
+}
+
+.bgAqua {
+    background-color: aqua;
+}
+
+.bgRed {
+    background-color: red;
+}
+
+.bgGrey {
+    background-color: grey;
+}
+
+.flex-dead-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    /*background: transparent;make scrollbar transparent */
+}

@@ -4,46 +4,31 @@
   <Sandbox msg="Second component instance" initFollowers="20" initFirstName="Melanie" initLastName="Lagman"/>
 </template-->
 
+<!--
+<style></style>
+<template></template>
+<script></script>
+-->
+
 <template>
-  <MinibetHeader />
-  <Greeting />
-  <Tabs @tabClickedEvent="selectPage"/>
-  <TransactionCarousel />
+  <router-view />
 </template>
 
 <script>
 //import Sandbox from './components/Sandbox.vue'
-import MinibetHeader from './components/MinibetHeader.vue'
-import Greeting from './components/Greeting.vue'
-import Tabs from './components/Tabs.vue'
-import TransactionCarousel from './components/TransactionCarousel.vue'
+//import Home from './views/Home.vue'
 
 export default {
   name: 'App',
   components: {
-    MinibetHeader,
-    Greeting,
-    Tabs,
-    TransactionCarousel
+    //Home
     //Sandbox
   },
-  methods:{
-    selectPage(object){
-      console.log(object)
-    }
-  }
+  methods:{},
+  mounted(){}
 }
 </script>
 
-<style>
-#app {
-  font-family: Source Sans Pro;
-}
-
-body {
-  background-color: #333;
-  margin: 0rem auto;
-  min-width: 20rem;
-  max-width: 50rem;
-}
+<style lang="scss">
+//see common.scss
 </style>

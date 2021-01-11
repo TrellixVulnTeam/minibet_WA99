@@ -1,0 +1,4 @@
+//console.log(Math.floor(Math.random()*20)) // random
+//console.log(Intl.NumberFormat().format()) // to thousand separators
+//object.constructor.name // data type
+//Object.keys(this.transactionProperties) // display all properties of an object
