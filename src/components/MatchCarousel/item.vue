@@ -74,8 +74,8 @@
 <div class="item-wrap" @mouseover="itemHovered" @mouseout="itemOut">
     <div class="rowA">
         <div class="arrows">
-            <div :style="[prop_MatchItems.status=='up' ? {backgroundImage: `url(${upArrowBG})`} : {}]"></div>
-            <div :style="[prop_MatchItems.status=='down' ? {backgroundImage: `url(${downArrowBG})`} : {}]"></div>
+            <div :style="[prop_MatchItems.status=='up' ? {backgroundImage: `url(${upArrowBG})`} : {},{}]"></div>
+            <div :style="[prop_MatchItems.status=='down' ? {backgroundImage: `url(${downArrowBG})`} : {},{}]"></div>
         </div>
         <div class="bet-type" :style="betTypeStyle">
             <div>{{prop_MatchItems.betTypeCount}}+</div>

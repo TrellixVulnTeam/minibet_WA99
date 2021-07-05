@@ -52,12 +52,15 @@
   border-radius: 1.5rem 0rem 1.5rem 1.5rem;
 }
 
+.text-salmon{
+  color: salmon;
+}
 </style>
 
 <template>
 
 <div class="tabs-wrap" style="margin-top: 3rem">
-  <div v-for="tab in tabs" :key="tab.id" :class="{'tabs-active': tab.isActive, 'tabs-inactive': !tab.isActive}" :style="tab.style" class="flex-dead-center" @click="tabClicked(tab,'anthony',40)">{{tab.label}}</div>
+  <div v-for="tab in tabs" :key="tab.id" :class="[{'tabs-active': tab.isActive, 'tabs-inactive': !tab.isActive},{'text-salmon' : !tab.isActive && 2<1}]" :style="tab.style" class="flex-dead-center" @click="tabClicked(tab,'anthony',40)">{{tab.label}}</div>
 </div>
 
 </template>

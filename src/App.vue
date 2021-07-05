@@ -31,4 +31,5 @@ export default {
 
 <style lang="scss">
 //see common.scss
+
 </style>

@@ -1,4 +1,4 @@
-<style scoped>
+<style lang="scss" scoped>
 
 .transactionCarousel-wrap {
     display: flex;
